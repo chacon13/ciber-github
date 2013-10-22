@@ -75,15 +75,15 @@ class VisualizadorParticulas {
         glTranslatef(-5.0f, -5.0f, -5.0f);
         
         glColor4f(1.0f, 0.0f, 0.0f, 0.3f);
-        list<Particula *>& particulas = instancia->simuladorParticulas.listaParticulas();
-        list<Particula *>::iterator p = particulas.begin();
-        while (p != particulas.end()) {
-            glPointSize((*p)->getMasa());
+        Lista<Particula *>& particulas = instancia->simuladorParticulas.listaParticulas();
+        Lista<Particula *>::Iterador p = particulas.iteradorIni();
+        while (!p.fin()) {
+            glPointSize(p.dato()->getMasa());
             glBegin(GL_POINTS);
-            glVertex3f((*p)->getX() / 10.0f, (*p)->getY() / 10.0f, (*p)->getZ() / 10.0f);
+            glVertex3f(p.dato()->getX() / 10.0f, p.dato()->getY() / 10.0f, p.dato()->getZ() / 10.0f);
             glEnd();
             
-            ++p;
+            p.siguiente();
         }
         
         glPopMatrix();

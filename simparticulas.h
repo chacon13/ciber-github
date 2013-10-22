@@ -12,7 +12,10 @@
 #include <list>
 #include <cstdlib>
 #include "Particula.h"
+#include "Lista.h"
+#include "Matriz3D.h"
 
+#define tE 100
 using namespace std;
 
 /** Clase donde debe implementarse la simulación de las partículas */
@@ -20,7 +23,9 @@ class SimuladorParticulas {
     // Añadir aquí estructuras de datos y atributos adicionales
     
     /** Lista de partículas */
-    list<Particula *> particulas;
+    Lista<Particula *> particulas;
+    Matriz3D<Particula*,tE>      espacio;
+    unsigned int* eResultado;
     
 public:
     /** Implementar creación de partículas */
@@ -36,7 +41,7 @@ public:
     void imprimirEstadisticas();
     
     /** Devolver la lista de partículas para visualización */
-    list<Particula *>& listaParticulas() {
+    Lista<Particula *>& listaParticulas() {
         return particulas;
     }
 };

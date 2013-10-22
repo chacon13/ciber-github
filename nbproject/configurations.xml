@@ -4,6 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>/home/master/NetBeansProjects/Test/FueraRango.h</itemPath>
+      <itemPath>/home/master/NetBeansProjects/Test/IteradorInvalido.h</itemPath>
+      <itemPath>/home/master/NetBeansProjects/Test/Lista.h</itemPath>
+      <itemPath>/home/master/NetBeansProjects/Test/Matriz3D.h</itemPath>
       <itemPath>Particula.cpp</itemPath>
       <itemPath>Particula.h</itemPath>
       <itemPath>simparticulas.cpp</itemPath>
@@ -51,6 +55,26 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="/home/master/NetBeansProjects/Test/FueraRango.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/master/NetBeansProjects/Test/IteradorInvalido.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/master/NetBeansProjects/Test/Lista.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/master/NetBeansProjects/Test/Matriz3D.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="Particula.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Particula.h" ex="false" tool="3" flavor2="0">
@@ -90,6 +114,26 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="/home/master/NetBeansProjects/Test/FueraRango.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/master/NetBeansProjects/Test/IteradorInvalido.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/master/NetBeansProjects/Test/Lista.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="/home/master/NetBeansProjects/Test/Matriz3D.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="Particula.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Particula.h" ex="false" tool="3" flavor2="0">
