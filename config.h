@@ -8,11 +8,15 @@
 
 #define SIMULACION_PARADA -1
 #define SIMULACION_CONTINUA -2
-#define NUM_PASOS_SIMULACION 1000
 
+/** Número de iteraciones que acometerá la aplicación. */
+#define NUM_PASOS_SIMULACION 1000
+/** Tamaño físico para el espacio. */
 #define tE 100
+/** Cantidad de partículas. */
 #define tP 1000
-#define desintegrar true
+/** Realiza la simulación teniendo en cuenta que las partículas se desintegran en función de su masa. */
+#define desintegrar false
 
 #endif	/* CONFIG_H */
 

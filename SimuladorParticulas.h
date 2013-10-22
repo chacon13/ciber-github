@@ -1,9 +1,8 @@
-//
-//  simparticulas.h
-//  particulas3D
-//
-//  Created by Antonio Jesús Rueda Ruiz on 21/10/13.
-//
+/* 
+ * @file   SimuladorParticulas.h
+ * @author Antonio Jesús Rueda Ruiz
+ * @author José Ángel Pastrana Padilla
+ */
 
 #ifndef __particulas3D__simuladorparticulas__
 #define __particulas3D__simuladorparticulas__
@@ -24,8 +23,8 @@ class SimuladorParticulas {
 private:
     Lista<Particula*>           particulas; /**< Lista de partículas */
     Matriz3D<Particula*,tE>     espacio; /**< Declaración del espacio 3D. */
-    unsigned int*               eResultado; /**< Declaración del vector que guardará las estadísticas de masa. */
-    unsigned int                eTotalP, /**< Estadística del total de partículas restantes al finalizar la aplicación. */
+    unsigned int                eResultado[tP], /**< Declaración del vector que guardará las estadísticas de masa. */
+                                eTotalP, /**< Estadística del total de partículas restantes al finalizar la aplicación. */
                                 eTotalF, /**< Estadística del total de fusiones que se produjeron. */
                                 eDesLibre, /**< Estadística del total de desintegraciones asignadas en una posición adyacente libre. */
                                 eDesOcupa; /**< Estadística del total de desintegraciones asignadas en una posición adyacente ocupada. */

@@ -8,20 +8,20 @@
       <itemPath>IteradorInvalido.h</itemPath>
       <itemPath>Lista.h</itemPath>
       <itemPath>Matriz3D.h</itemPath>
-      <itemPath>Particula.cpp</itemPath>
       <itemPath>Particula.h</itemPath>
-      <itemPath>VisualizadorParticulas.cpp</itemPath>
+      <itemPath>SimuladorParticulas.h</itemPath>
       <itemPath>VisualizadorParticulas.h</itemPath>
-      <itemPath>simparticulas.cpp</itemPath>
-      <itemPath>simparticulas.h</itemPath>
-      <itemPath>tb.cpp</itemPath>
       <itemPath>tb.h</itemPath>
-      <itemPath>trackball.cpp</itemPath>
       <itemPath>trackball.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>Particula.cpp</itemPath>
+      <itemPath>SimuladorParticulas.cpp</itemPath>
+      <itemPath>VisualizadorParticulas.cpp</itemPath>
+      <itemPath>tb.cpp</itemPath>
+      <itemPath>trackball.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
@@ -71,6 +71,10 @@
       </item>
       <item path="Particula.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="SimuladorParticulas.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SimuladorParticulas.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="VisualizadorParticulas.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VisualizadorParticulas.h" ex="false" tool="3" flavor2="0">
@@ -78,10 +82,6 @@
       <item path="config.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simparticulas.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simparticulas.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tb.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -126,6 +126,10 @@
       </item>
       <item path="Particula.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="SimuladorParticulas.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SimuladorParticulas.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="VisualizadorParticulas.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="VisualizadorParticulas.h" ex="false" tool="3" flavor2="0">
@@ -133,10 +137,6 @@
       <item path="config.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simparticulas.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="simparticulas.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tb.cpp" ex="false" tool="1" flavor2="0">
       </item>

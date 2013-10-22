@@ -1,9 +1,8 @@
-//
-//  visparticulas.cpp
-//  particulas3D
-//
-//  Created by Antonio Jesús Rueda Ruiz on 21/10/13.
-//
+/* 
+ * @file   VisualizadorParticulas.cpp
+ * @author Antonio Jesús Rueda Ruiz
+ * @author José Ángel Pastrana Padilla
+ */
 
 #include "VisualizadorParticulas.h"
 
@@ -45,12 +44,12 @@ void VisualizadorParticulas::dibujarParticulas() {
     glColor4f(1.0f, 0.0f, 0.0f, 0.3f);
     Lista<Particula *>& particulas = instancia->simuladorParticulas.listaParticulas();
     Lista<Particula *>::Iterador p = particulas.iteradorIni();
+    
     while (!p.fin()) {
         glPointSize(p.dato()->getMasa());
         glBegin(GL_POINTS);
         glVertex3f(p.dato()->getX() / 10.0f, p.dato()->getY() / 10.0f, p.dato()->getZ() / 10.0f);
         glEnd();
-
         p.siguiente();
     }
 

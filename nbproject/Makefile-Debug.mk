@@ -36,9 +36,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Particula.o \
+	${OBJECTDIR}/SimuladorParticulas.o \
 	${OBJECTDIR}/VisualizadorParticulas.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/simparticulas.o \
 	${OBJECTDIR}/tb.o \
 	${OBJECTDIR}/trackball.o
 
@@ -72,6 +72,11 @@ ${OBJECTDIR}/Particula.o: Particula.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Particula.o Particula.cpp
 
+${OBJECTDIR}/SimuladorParticulas.o: SimuladorParticulas.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/SimuladorParticulas.o SimuladorParticulas.cpp
+
 ${OBJECTDIR}/VisualizadorParticulas.o: VisualizadorParticulas.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
@@ -81,11 +86,6 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
-
-${OBJECTDIR}/simparticulas.o: simparticulas.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/simparticulas.o simparticulas.cpp
 
 ${OBJECTDIR}/tb.o: tb.cpp 
 	${MKDIR} -p ${OBJECTDIR}

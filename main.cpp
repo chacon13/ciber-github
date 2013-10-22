@@ -1,12 +1,10 @@
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-#include <cmath>
-#include <sstream>
+/* 
+ * @file        main.cpp
+ * @author Antonio Jesús Rueda Ruiz
+ * @author José Ángel Pastrana Padilla
+ */
 
 #include "VisualizadorParticulas.h"
-
-using namespace std;
 
 int main(int argc, char **argv)
 {

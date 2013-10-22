@@ -1,9 +1,8 @@
-//
-//  visparticulas.h
-//  particulas3D
-//
-//  Created by Antonio Jesús Rueda Ruiz on 21/10/13.
-//
+/* 
+ * @file   VisualizadorParticulas.h
+ * @author Antonio Jesús Rueda Ruiz
+ * @author José Ángel Pastrana Padilla
+ */
 
 #ifndef VISUALIZADORPARTICULAS_H
 #define	VISUALIZADORPARTICULAS_H
@@ -15,7 +14,7 @@
 #endif
 
 #include "config.h"
-#include "simparticulas.h"
+#include "SimuladorParticulas.h"
 #include "tb.h"
 
 /** Clase principal del simulador de partículas */

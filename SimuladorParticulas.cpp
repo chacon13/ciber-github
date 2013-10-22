@@ -1,15 +1,13 @@
-//
-//  simparticulas.cpp
-//  particulas3D
-//
-//  Created by Antonio Jesús Rueda Ruiz on 21/10/13.
-//
+/* 
+ * @file   SimuladorParticulas.cpp
+ * @author Antonio Jesús Rueda Ruiz
+ * @author José Ángel Pastrana Padilla
+ */
 
-#include "simparticulas.h"
+#include "SimuladorParticulas.h"
 
-SimuladorParticulas::SimuladorParticulas(int numParticulas) : particulas(),espacio(),eResultado(0),eTotalP(0),eTotalF(0),eDesLibre(0),eDesOcupa(0) {
+SimuladorParticulas::SimuladorParticulas(int numParticulas) : particulas(),espacio(),eResultado(),eTotalP(0),eTotalF(0),eDesLibre(0),eDesOcupa(0) {
     srand(time(NULL)); /* Semilla. */
-    eResultado=new unsigned int[numParticulas];
     for (int i=0; i<tE; ++i) {
         for (int j=0; j<tE; ++j) {
             for (int k=0; k<tE; ++k) {
@@ -28,7 +26,6 @@ SimuladorParticulas::SimuladorParticulas(int numParticulas) : particulas(),espac
 }
 
 SimuladorParticulas::~SimuladorParticulas() {
-    delete[] eResultado;
 }
 
 
