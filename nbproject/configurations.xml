@@ -4,12 +4,14 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>/home/master/NetBeansProjects/Test/FueraRango.h</itemPath>
-      <itemPath>/home/master/NetBeansProjects/Test/IteradorInvalido.h</itemPath>
-      <itemPath>/home/master/NetBeansProjects/Test/Lista.h</itemPath>
-      <itemPath>/home/master/NetBeansProjects/Test/Matriz3D.h</itemPath>
+      <itemPath>FueraRango.h</itemPath>
+      <itemPath>IteradorInvalido.h</itemPath>
+      <itemPath>Lista.h</itemPath>
+      <itemPath>Matriz3D.h</itemPath>
       <itemPath>Particula.cpp</itemPath>
       <itemPath>Particula.h</itemPath>
+      <itemPath>VisualizadorParticulas.cpp</itemPath>
+      <itemPath>VisualizadorParticulas.h</itemPath>
       <itemPath>simparticulas.cpp</itemPath>
       <itemPath>simparticulas.h</itemPath>
       <itemPath>tb.cpp</itemPath>
@@ -24,7 +26,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>config.h</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>util.h</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -55,29 +59,23 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="/home/master/NetBeansProjects/Test/FueraRango.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="FueraRango.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="/home/master/NetBeansProjects/Test/IteradorInvalido.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="IteradorInvalido.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="/home/master/NetBeansProjects/Test/Lista.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="Lista.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="/home/master/NetBeansProjects/Test/Matriz3D.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="Matriz3D.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Particula.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Particula.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VisualizadorParticulas.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VisualizadorParticulas.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="config.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -92,6 +90,8 @@
       <item path="trackball.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="trackball.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -114,29 +114,23 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="/home/master/NetBeansProjects/Test/FueraRango.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="FueraRango.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="/home/master/NetBeansProjects/Test/IteradorInvalido.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="IteradorInvalido.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="/home/master/NetBeansProjects/Test/Lista.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="Lista.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="/home/master/NetBeansProjects/Test/Matriz3D.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="Matriz3D.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Particula.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Particula.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="VisualizadorParticulas.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="VisualizadorParticulas.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="config.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -151,6 +145,8 @@
       <item path="trackball.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="trackball.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="util.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

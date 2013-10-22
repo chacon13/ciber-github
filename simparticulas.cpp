@@ -8,10 +8,7 @@
 #include "simparticulas.h"
 
 SimuladorParticulas::SimuladorParticulas(int numParticulas) : particulas(),espacio(),eResultado(0),eTotalP(0),eTotalF(0),eDesLibre(0),eDesOcupa(0) {
-    // Sustituir este código por la creación de partículas propia
-//    for (int i = 0; i < numParticulas; i++) {
-//        particulas.insertarFin(new Particula(rand() % 100, rand() % 100, rand() % 100));
-//    }
+    srand(time(NULL)); /* Semilla. */
     eResultado=new unsigned int[numParticulas];
     for (int i=0; i<tE; ++i) {
         for (int j=0; j<tE; ++j) {
@@ -36,67 +33,67 @@ SimuladorParticulas::~SimuladorParticulas() {
 
 
 void SimuladorParticulas::actualizar() {
-        Lista<Particula*>::Iterador itP=particulas.iteradorIni();
-        while (!itP.fin())  {
-            if ( rand()%2 ) {
-                unsigned int ox, oy, oz;
-                int dx, dy, dz;
-                ox=itP.dato()->getX(), oy=itP.dato()->getY(), oz=itP.dato()->getZ();
-                dx=ox+(rand()%3)-1, dy=oy+(rand()%3)-1, dz=oz+(rand()%3)-1;
-                dx = ( dx>=0 ) ? ( ( dx<tE ) ? dx : --dx ) : ++dx; 
-                dy = ( dy>=0 ) ? ( ( dy<tE ) ? dy : --dy ) : ++dy; 
-                dz = ( dz>=0 ) ? ( ( dz<tE ) ? dz : --dz ) : ++dz; 
-                if ( ((ox!=dx) || (oy!=dy)) || (oz!=dz) ) {
-                    if (espacio(dx,dy,dz)) {
-                        espacio(dx,dy,dz)->aumentaMasa(itP.dato()->getMasa());
-                        delete itP.dato();
-                        particulas.borrar(itP);
-                        espacio(ox,oy,oz)=0;
-                        ++eTotalF;
-                    } else {
-                        itP.dato()->actualizaPosicion(dx,dy,dz);
-                        espacio(ox,oy,oz)=0;
-                        espacio(dx,dy,dz)=itP.dato();
-                        itP.siguiente();
-                    }
+    srand(time(NULL)); /* Semilla. */
+    Lista<Particula*>::Iterador itP=particulas.iteradorIni();
+    while (!itP.fin())  {
+        if ( rand()%2 ) {
+            unsigned int ox, oy, oz;
+            int dx, dy, dz;
+            ox=itP.dato()->getX(), oy=itP.dato()->getY(), oz=itP.dato()->getZ();
+            dx=ox+(rand()%3)-1, dy=oy+(rand()%3)-1, dz=oz+(rand()%3)-1;
+            dx = ( dx>=0 ) ? ( ( dx<tE ) ? dx : --dx ) : ++dx; 
+            dy = ( dy>=0 ) ? ( ( dy<tE ) ? dy : --dy ) : ++dy; 
+            dz = ( dz>=0 ) ? ( ( dz<tE ) ? dz : --dz ) : ++dz; 
+            if ( ((ox!=dx) || (oy!=dy)) || (oz!=dz) ) {
+                if (espacio(dx,dy,dz)) {
+                    espacio(dx,dy,dz)->aumentaMasa(itP.dato()->getMasa());
+                    delete itP.dato();
+                    particulas.borrar(itP);
+                    espacio(ox,oy,oz)=0;
+                    ++eTotalF;
                 } else {
+                    itP.dato()->actualizaPosicion(dx,dy,dz);
+                    espacio(ox,oy,oz)=0;
+                    espacio(dx,dy,dz)=itP.dato();
                     itP.siguiente();
                 }
             } else {
                 itP.siguiente();
             }
+        } else {
+            itP.siguiente();
         }
-        if (desintegrar) {
-            itP=particulas.iteradorFin();
-            while (!itP.fin()) {
-                int m=itP.dato()->getMasa();
-                if (desintegrarParticula(m)) {
-                    m/=2;
-                    itP.dato()->aumentaMasa((-1)*m);
-                    
-                    unsigned int ox, oy, oz;
-                    int dx, dy, dz;
-                    ox=itP.dato()->getX(), oy=itP.dato()->getY(), oz=itP.dato()->getZ();
-                    do {
-                        dx=ox+(rand()%3)-1, dy=oy+(rand()%3)-1, dz=oz+(rand()%3)-1;
-                    } while ((ox==dx && oy==dy) && oz==dz);
-                    dx = ( dx>=0 ) ? ( ( dx<tE ) ? dx : --dx ) : ++dx; 
-                    dy = ( dy>=0 ) ? ( ( dy<tE ) ? dy : --dy ) : ++dy; 
-                    dz = ( dz>=0 ) ? ( ( dz<tE ) ? dz : --dz ) : ++dz; 
-                    
-                    if (espacio(dx,dy,dz)) {
-                        espacio(dx,dy,dz)->aumentaMasa(m);
-                        ++eDesOcupa; ++eTotalF;
-                    } else {
-                        espacio(dx,dy,dz)=particulas.insertarFin(new Particula(dx,dy,dz,m));
-                        ++eDesLibre;
-                    }
-                }
-                itP.anterior();
-            }
-        }
-}
+    }
+    if (desintegrar) {
+        itP=particulas.iteradorFin();
+        while (!itP.fin()) {
+            int m=itP.dato()->getMasa();
+            if (desintegrarParticula(m)) {
+                m/=2;
+                itP.dato()->aumentaMasa((-1)*m);
 
+                unsigned int ox, oy, oz;
+                int dx, dy, dz;
+                ox=itP.dato()->getX(), oy=itP.dato()->getY(), oz=itP.dato()->getZ();
+                do {
+                    dx=ox+(rand()%3)-1, dy=oy+(rand()%3)-1, dz=oz+(rand()%3)-1;
+                } while ((ox==dx && oy==dy) && oz==dz);
+                dx = ( dx>=0 ) ? ( ( dx<tE ) ? dx : --dx ) : ++dx; 
+                dy = ( dy>=0 ) ? ( ( dy<tE ) ? dy : --dy ) : ++dy; 
+                dz = ( dz>=0 ) ? ( ( dz<tE ) ? dz : --dz ) : ++dz; 
+
+                if (espacio(dx,dy,dz)) {
+                    espacio(dx,dy,dz)->aumentaMasa(m);
+                    ++eDesOcupa; ++eTotalF;
+                } else {
+                    espacio(dx,dy,dz)=particulas.insertarFin(new Particula(dx,dy,dz,m));
+                    ++eDesLibre;
+                }
+            }
+            itP.anterior();
+        }
+    }
+}
 
 void SimuladorParticulas::imprimirEstadisticas() {
     Lista<Particula*>::Iterador itP=particulas.iteradorIni();
