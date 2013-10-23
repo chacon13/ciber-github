@@ -77,7 +77,7 @@ T& Matriz3D<T,N>::operator()(const unsigned int x, const unsigned int y, const u
             }
         }
     }
-    const int indices[]={x,y,z};
+    const unsigned int indices[]={x,y,z};
     const unsigned int tamIndices[]={N,N,N};
     throw FueraRango(3,indices,tamIndices);
 }

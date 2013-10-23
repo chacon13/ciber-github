@@ -58,7 +58,7 @@ void SimuladorParticulas::actualizar() {
                 itP.siguiente();
             }
         } else {
-            itP.siguiente();
+                itP.siguiente();
         }
     }
     if (desintegrar) {

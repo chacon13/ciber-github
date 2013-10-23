@@ -41,7 +41,7 @@ void VisualizadorParticulas::dibujarParticulas() {
 
     glTranslatef(-5.0f, -5.0f, -5.0f);
 
-    glColor4f(1.0f, 0.0f, 0.0f, 0.3f);
+    glColor4f(1.0f, 1.0f, 1.0f, 0.8f); //    glColor4f(1.0f, 0.0f, 0.0f, 0.3f);
     Lista<Particula *>& particulas = instancia->simuladorParticulas.listaParticulas();
     Lista<Particula *>::Iterador p = particulas.iteradorIni();
     

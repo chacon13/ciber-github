@@ -14,9 +14,9 @@
  */
 class FueraRango: public std::exception {
 private:
-    const unsigned int n; /**< Número de índices que controla la clase **/
-    const int* v; /**< Coordenadas en las cuales se produjo la excepción **/
-    const unsigned int* l; /**< Indica los límites físicos para los índices **/
+    const unsigned int  n, /**< Número de índices que controla la clase **/
+                      * v,/**< Coordenadas en las cuales se produjo la excepción **/
+                      * l; /**< Indica los límites físicos para los índices **/
     
 public:
     FueraRango():exception(),n(0),v(0),l(0) {}; /**< Constructor por defecto */
@@ -27,7 +27,7 @@ public:
      * @param _v Vector con las coordenadas que produjeron la excepción.
      * @param _l Opcional. Vector con los límites de los índices.
      */
-    FueraRango(const unsigned int _n, const int* _v, const unsigned int* _l=0):n(_n),v(_v),l(_l) {};
+    FueraRango(const unsigned int _n, const unsigned int* _v, const unsigned int* _l=0):n(_n),v(_v),l(_l) {};
     
     /**
      * @brief Mensaje informativo sobre la excepción producida.

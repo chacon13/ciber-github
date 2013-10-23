@@ -15,8 +15,8 @@ template<typename T>
 class Lista {
 private:
     class Nodo; /* Predeclaración de clase anidada Nodo. */
-    Nodo *cabecera, /**< Nodo cabecera de la lista. */
-         *cola; /**< Nodo cola de la lista. */
+    Nodo* cabecera, /**< Nodo cabecera de la lista. */
+        * cola; /**< Nodo cola de la lista. */
     
 public:
     class Iterador; /* Predeclaración de la clase anidada Iterador. */
@@ -38,7 +38,7 @@ public:
      * @brief Insertar un elemento en la lista empleando un iterador.
      * @param it Iterador de la lista.
      * @param dato Elemento a añadir.
-     * @post En determinados casos, modifica los miembros cabecera y dato. Modifica iterador.
+     * @post En determinados casos, modifica los miembros cabecera y dato. Modifica iterador apuntando al dato insertado.
      * @throw Excepción IteradorInvalido, si no se puede introducir un elemento con el iterador dado.
      * @return Dato introducido.
      */
@@ -82,7 +82,7 @@ public:
     void borrarFin();
 
     Iterador iteradorIni() { return Iterador(cabecera); }; /**<  Iterador de lista, iniciado desde el primer elemento de la lista. */
-    Iterador iteradorFin() { return Iterador(cola); }; /**<  Iterador de lista, iniciado desde el último  elemento de la lista. */
+    Iterador iteradorFin() { return Iterador(cola); }; /**<  Iterador de lista, iniciado desde el último elemento de la lista. */
 };
 
 /**
@@ -185,21 +185,19 @@ const int Lista<T>::tam() const {
 
 template<typename T>
 T& Lista<T>::insertar(Iterador& it, const T dato) throw (IteradorInvalido) {
-    if (it.actual==cabecera) {
-        insertarIni(dato);
-        it.actual=cabecera;
-    } else if (it.actual==cola) {
-        insertarFin(dato);
+    if (it.actual) {
+        Nodo* nuevo=new Nodo(dato,it.actual,it.actual->siguiente);
+        if (it.actual->siguiente) {
+            it.actual->siguiente->anterior=nuevo;
+        } else {
+            cola=nuevo;
+        }
+        it.actual->siguiente=nuevo;
         it.siguiente();
-    } else if (it.actual) {
-        Nodo* nuevo=new Nodo(dato,it.actual->anterior,it.actual);
-        it.actual->anterior->siguiente=nuevo;
-        it.actual->anterior=nuevo;
-        it.anterior();
+        return it.actual->dato;
     } else {
         throw IteradorInvalido();
     }
-    return it.actual->dato;
 }
 
 template<typename T>
@@ -230,15 +228,17 @@ T& Lista<T>::insertarFin(const T dato) {
 
 template<typename T>
 void Lista<T>::borrar(Iterador& it) throw (IteradorInvalido) {
-    if (it.actual==cabecera) {
-        it.siguiente();
-        borrarIni();
-    } else if (it.actual==cola) {
-        it.anterior();
-        borrarFin();
-    } else if (it.actual) {
-        it.actual->anterior->siguiente=it.actual->siguiente;
-        it.actual->siguiente->anterior=it.actual->anterior;
+    if (it.actual) {
+        if (it.actual->anterior) {
+            it.actual->anterior->siguiente=it.actual->siguiente;
+        } else {
+            cabecera=it.actual->siguiente;
+        }
+        if (it.actual->siguiente) {
+            it.actual->siguiente->anterior=it.actual->anterior;
+        } else {
+            cola=it.actual->anterior;
+        }
         Nodo* borrame=it.actual;
         it.siguiente();
         delete borrame;
