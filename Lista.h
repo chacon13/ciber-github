@@ -17,10 +17,11 @@ private:
     class Nodo; /* Predeclaración de clase anidada Nodo. */
     Nodo* cabecera, /**< Nodo cabecera de la lista. */
         * cola; /**< Nodo cola de la lista. */
+    unsigned int nL; /**< Número de elementos en la lista. */
     
 public:
     class Iterador; /* Predeclaración de la clase anidada Iterador. */
-    Lista():cabecera(0),cola(0) {}; /**< Constructor por defecto. La lista está vacía. */
+    Lista():cabecera(0),cola(0),nL(0) {}; /**< Constructor por defecto. La lista está vacía. */
     Lista(const Lista& orig); /**< Constructor por copia. Los elementos de la lista original serán duplicados en la lista construída. */
     virtual ~Lista(); /**< Destructor de la lista. */
     
@@ -32,7 +33,7 @@ public:
      */
     Lista& operator=(const Lista& orig);
     
-    const int tam() const; /**< Cantidad de elementos en la lista */
+    const unsigned int& tam() const; /**< Cantidad de elementos en la lista */
     
     /**
      * @brief Insertar un elemento en la lista empleando un iterador.
@@ -42,7 +43,7 @@ public:
      * @throw Excepción IteradorInvalido, si no se puede introducir un elemento con el iterador dado.
      * @return Dato introducido.
      */
-    T& insertar(Iterador& it, const T dato) throw (IteradorInvalido);
+    T& insertar(Iterador& it, const T& dato) throw (IteradorInvalido);
     
     /**
      * @brief Insertar un elemento al principio de la lista.
@@ -50,7 +51,7 @@ public:
      * @post Modifica el miembro cabecera y en determinados casos, cola.
      * @return Dato introducido.
      */
-    T& insertarIni(const T dato);
+    T& insertarIni(const T& dato);
     
     /**
      * @brief Insertar un elemento al final de la lista.
@@ -58,7 +59,7 @@ public:
      * @post Modifica el miembro cola y en determinados casos, cabecera.
      * @return Dato introducido.
      */
-    T& insertarFin(const T dato);
+    T& insertarFin(const T& dato);
     
     /**
      * @brief Borrar un elemento en la lista empleando un iterador.
@@ -96,7 +97,7 @@ private:
     Nodo* anterior; /**< Nodo precedente a éste. */
     Nodo* siguiente; /**< Nodo posterior a éste. */
 public:
-    Nodo(T _dato, Nodo* _anterior=0, Nodo* _siguiente=0):dato(_dato),anterior(_anterior),siguiente(_siguiente) {}; /**< Constructor por defecto de Nodo. */
+    Nodo(const T& _dato, Nodo* _anterior=0, Nodo* _siguiente=0):dato(_dato),anterior(_anterior),siguiente(_siguiente) {}; /**< Constructor por defecto de Nodo. */
     virtual ~Nodo() {}; /**< Destructor de Nodo. */
 }; 
 
@@ -173,18 +174,12 @@ Lista<T>& Lista<T>::operator=(const Lista& orig) {
 }
 
 template<typename T>
-const int Lista<T>::tam() const {
-    unsigned int i=0;
-    Nodo* actual=cabecera;
-    while(actual) {
-        actual=actual->siguiente;
-        ++i;
-    }
-    return i;
+const unsigned int& Lista<T>::tam() const {
+    return nL;
 }
 
 template<typename T>
-T& Lista<T>::insertar(Iterador& it, const T dato) throw (IteradorInvalido) {
+T& Lista<T>::insertar(Iterador& it, const T& dato) throw (IteradorInvalido) {
     if (it.actual) {
         Nodo* nuevo=new Nodo(dato,it.actual,it.actual->siguiente);
         if (it.actual->siguiente) {
@@ -194,6 +189,7 @@ T& Lista<T>::insertar(Iterador& it, const T dato) throw (IteradorInvalido) {
         }
         it.actual->siguiente=nuevo;
         it.siguiente();
+        ++nL;
         return it.actual->dato;
     } else {
         throw IteradorInvalido();
@@ -201,7 +197,7 @@ T& Lista<T>::insertar(Iterador& it, const T dato) throw (IteradorInvalido) {
 }
 
 template<typename T>
-T& Lista<T>::insertarIni(const T dato) {
+T& Lista<T>::insertarIni(const T& dato) {
     Nodo* nuevo=new Nodo(dato,0,cabecera);
     if (!cola) {
         cola=nuevo;
@@ -210,11 +206,12 @@ T& Lista<T>::insertarIni(const T dato) {
         cabecera->anterior=nuevo;
     }
     cabecera=nuevo;
+    ++nL;
     return cabecera->dato;
 }
 
 template<typename T>
-T& Lista<T>::insertarFin(const T dato) {
+T& Lista<T>::insertarFin(const T& dato) {
     Nodo* nuevo=new Nodo(dato,cola,0);
     if (!cabecera) {
         cabecera=nuevo;
@@ -223,6 +220,7 @@ T& Lista<T>::insertarFin(const T dato) {
         cola->siguiente=nuevo;
     }
     cola=nuevo;
+    ++nL;
     return cola->dato;
 }
 
@@ -241,6 +239,7 @@ void Lista<T>::borrar(Iterador& it) throw (IteradorInvalido) {
         }
         Nodo* borrame=it.actual;
         it.siguiente();
+        --nL;
         delete borrame;
     } else {
         throw IteradorInvalido();
@@ -253,6 +252,7 @@ void Lista<T>::borrarIni() {
         Nodo* borrame=cabecera;
         cabecera=cabecera->siguiente;
         delete borrame;
+        --nL;
     }
     if (cabecera) {
         cabecera->anterior=0;
@@ -267,6 +267,7 @@ void Lista<T>::borrarFin() {
         Nodo* borrame=cola;
         cola=cola->anterior;
         delete borrame;
+        --nL;
     }
     if (cola) {
         cola->siguiente=0;

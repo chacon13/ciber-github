@@ -11,8 +11,8 @@
  */
 class Particula {
 private:
-    unsigned int x, y, z; /**< Posición dentro de la matriz **/
-    unsigned int masa; /**< Masa de la partícula **/
+    unsigned int x, y, z, /**< Posición dentro de la matriz. **/
+                 masa;    /**< Masa de la partícula. **/
     
 public:
     
@@ -37,7 +37,7 @@ public:
      * @brief Obtener la masa de la partícula.
      * @return Valor de la masa.
      */
-    unsigned int getMasa() const;
+    const unsigned int getMasa() const;
     
     /**
      * @brief Aumentar masa de la partícula.
@@ -53,9 +53,9 @@ public:
      */
     void actualizaPosicion(const unsigned int _x, const unsigned int _y, const unsigned int _z);
     
-    unsigned int getZ() const; /**< Observador del eje Z para la partícula. */
-    unsigned int getY() const; /**< Observador del eje Y para la partícula. */
-    unsigned int getX() const; /**< Observador del eje X para la partícula. */
+    const unsigned int getZ() const; /**< Observador del eje Z para la partícula. */
+    const unsigned int getY() const; /**< Observador del eje Y para la partícula. */
+    const unsigned int getX() const; /**< Observador del eje X para la partícula. */
 };
 
 #endif	/* PARTICULA_H */

@@ -58,10 +58,10 @@ void SimuladorParticulas::actualizar() {
                 itP.siguiente();
             }
         } else {
-                itP.siguiente();
+            itP.siguiente();
         }
     }
-    if (desintegrar) {
+    if (DESINTEGRAR) {
         itP=particulas.iteradorFin();
         while (!itP.fin()) {
             int m=itP.dato()->getMasa();
@@ -97,6 +97,9 @@ void SimuladorParticulas::imprimirEstadisticas() {
     while (!itP.fin()) {
         eResultado[itP.dato()->getMasa()-1]++;
         delete itP.dato();
+        if (LIMPIARVISTA) {
+                particulas.borrarIni();
+        }
         itP.siguiente();
     }
     
@@ -108,7 +111,7 @@ void SimuladorParticulas::imprimirEstadisticas() {
             eTotalP+=eResultado[c];
         }
     }
-
+    
     cout << "Total de partículas: " << eTotalP << endl;
     cout << "Total de fusiones: "<< eTotalF << endl;
     cout << "Total de desintegraciones: " << eDesLibre+eDesOcupa << endl;

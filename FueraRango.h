@@ -27,7 +27,7 @@ public:
      * @param _v Vector con las coordenadas que produjeron la excepción.
      * @param _l Opcional. Vector con los límites de los índices.
      */
-    FueraRango(const unsigned int _n, const unsigned int* _v, const unsigned int* _l=0):n(_n),v(_v),l(_l) {};
+    FueraRango(const unsigned int& _n, const unsigned int* _v, const unsigned int* _l=0):n(_n),v(_v),l(_l) {};
     
     /**
      * @brief Mensaje informativo sobre la excepción producida.

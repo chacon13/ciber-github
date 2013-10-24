@@ -16,7 +16,7 @@ Particula::Particula(const Particula& orig) {
 Particula::~Particula() {
 }
 
-unsigned int Particula::getMasa() const {
+const unsigned int Particula::getMasa() const {
     return masa;
 }
 
@@ -28,14 +28,14 @@ void Particula::actualizaPosicion(const unsigned int _x, const unsigned int _y, 
     x=_x, y=_y, z=_z;
 }
 
-unsigned int Particula::getZ() const {
+const unsigned int Particula::getZ() const {
     return z;
 }
 
-unsigned int Particula::getY() const {
+const unsigned int Particula::getY() const {
     return y;
 }
 
-unsigned int Particula::getX() const {
+const unsigned int Particula::getX() const {
     return x;
 }
