@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="90">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
-      <itemPath>FueraRango.h</itemPath>
-      <itemPath>IteradorInvalido.h</itemPath>
+    <logicalFolder name="f2"
+                   displayName="Contenedores"
+                   projectFiles="true"
+                   kind="ROOT">
       <itemPath>Lista.h</itemPath>
       <itemPath>Matriz3D.h</itemPath>
-      <itemPath>Particula.h</itemPath>
-      <itemPath>SimuladorParticulas.h</itemPath>
-      <itemPath>VisualizadorParticulas.h</itemPath>
-      <itemPath>tb.h</itemPath>
-      <itemPath>trackball.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="ResourceFiles"
-                   displayName="Resource Files"
-                   projectFiles="true">
-      <itemPath>Particula.cpp</itemPath>
-      <itemPath>SimuladorParticulas.cpp</itemPath>
-      <itemPath>VisualizadorParticulas.cpp</itemPath>
-      <itemPath>tb.cpp</itemPath>
-      <itemPath>trackball.cpp</itemPath>
+    <logicalFolder name="f1"
+                   displayName="Excepciones"
+                   projectFiles="true"
+                   kind="ROOT">
+      <itemPath>FueraRango.h</itemPath>
+      <itemPath>IteradorInvalido.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
+    <logicalFolder name="SourceFiles" displayName="Principal" projectFiles="true">
       <itemPath>config.h</itemPath>
       <itemPath>main.cpp</itemPath>
       <itemPath>util.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f3" displayName="Recursos" projectFiles="true" kind="ROOT">
+      <logicalFolder name="f2" displayName="Cabecera" projectFiles="true" kind="ROOT">
+        <itemPath>Particula.h</itemPath>
+        <itemPath>SimuladorParticulas.h</itemPath>
+        <itemPath>VisualizadorParticulas.h</itemPath>
+        <itemPath>tb.h</itemPath>
+        <itemPath>trackball.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1"
+                     displayName="Implementaciones"
+                     projectFiles="true"
+                     kind="ROOT">
+        <itemPath>Particula.cpp</itemPath>
+        <itemPath>SimuladorParticulas.cpp</itemPath>
+        <itemPath>VisualizadorParticulas.cpp</itemPath>
+        <itemPath>tb.cpp</itemPath>
+        <itemPath>trackball.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"

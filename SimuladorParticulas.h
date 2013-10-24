@@ -1,5 +1,6 @@
 /* 
  * @file   SimuladorParticulas.h
+ * @title  Reproduce el comportamiento de las partículas dentro de un espacio cúbico
  * @author Antonio Jesús Rueda Ruiz
  * @author José Ángel Pastrana Padilla
  */
@@ -18,7 +19,9 @@
 
 using namespace std;
 
-/** Clase donde debe implementarse la simulación de las partículas */
+/** 
+ * @brief Clase donde debe implementarse la simulación de las partículas.
+ */
 class SimuladorParticulas {
 private:
     Lista<Particula*>           particulas; /**< Lista de partículas */

@@ -1,6 +1,8 @@
 /* 
+ * @file   FueraRango.h
+ * @title  Excepción para controlar los accesos inválidos en vectores
  * @author José Ángel Pastrana Padilla
- * @email japp0005@red.ujaen.es
+ * @email  japp0005@red.ujaen.es
  */
 
 #ifndef FUERARANGO_H
@@ -14,12 +16,12 @@
  */
 class FueraRango: public std::exception {
 private:
-    const unsigned int  n, /**< Número de índices que controla la clase **/
-                      * v,/**< Coordenadas en las cuales se produjo la excepción **/
-                      * l; /**< Indica los límites físicos para los índices **/
+    const unsigned int  n, /**< Número de índices que controla. **/
+                      * v,/**< Coordenadas en las cuales se produjo la excepción. **/
+                      * l; /**< Límites físicos para los índices. **/
     
 public:
-    FueraRango():exception(),n(0),v(0),l(0) {}; /**< Constructor por defecto */
+    FueraRango():exception(),n(0),v(0),l(0) {}; /**< Constructor por defecto. */
     
     /**
      * @brief Constructor parametrizado.

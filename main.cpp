@@ -1,5 +1,6 @@
 /* 
- * @file        main.cpp
+ * @file   main.cpp
+ * @title  Principal - Ejecución de la simulación empleando GLUT
  * @author Antonio Jesús Rueda Ruiz
  * @author José Ángel Pastrana Padilla
  */

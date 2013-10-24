@@ -1,5 +1,6 @@
 /* 
  * @file   VisualizadorParticulas.cpp
+ * @title  Representa gráficamente un mundo simulado de partículas
  * @author Antonio Jesús Rueda Ruiz
  * @author José Ángel Pastrana Padilla
  */
@@ -8,14 +9,14 @@
 
 VisualizadorParticulas* VisualizadorParticulas::instancia = 0;
 
-/** Iniciación del simulador */
-VisualizadorParticulas::VisualizadorParticulas(int totalPasos): simuladorParticulas() {
+VisualizadorParticulas::VisualizadorParticulas(int totalPasos): simuladorParticulas(),rotate_x(0),rotate_y(0) {
     this->pasos = totalPasos;
     frames = fps = -1;
     tiempoAnterior = glutGet(GLUT_ELAPSED_TIME);
 }
 
-/** Actualización de partículas */
+VisualizadorParticulas::~VisualizadorParticulas() {};
+
 void VisualizadorParticulas::actualizarParticulas() {
     // Si quedan pasos de simulación, actualizar.
     if (pasos > 0 || pasos == SIMULACION_CONTINUA) {
@@ -31,7 +32,6 @@ void VisualizadorParticulas::actualizarParticulas() {
     }
 }
 
-/** Dibujado de partículas */
 void VisualizadorParticulas::dibujarParticulas() {
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -39,9 +39,14 @@ void VisualizadorParticulas::dibujarParticulas() {
 
     tbMatrix();
 
+    glRotatef( instancia->rotate_x, 1.0, 0.0, 0.0 );
+    glRotatef( instancia->rotate_y, 0.0, 1.0, 0.0 );
     glTranslatef(-5.0f, -5.0f, -5.0f);
 
-    glColor4f(1.0f, 1.0f, 1.0f, 0.8f); //    glColor4f(1.0f, 0.0f, 0.0f, 0.3f);
+    GL_ARISTACUBO
+    GL_PAREDCUBO
+    
+    glColor4f(1.0f, 1.0f, 1.0f, 0.9f); //glColor4f(1.0f, 0.0f, 0.0f, 0.3f);
     Lista<Particula*>& particulas = instancia->simuladorParticulas.listaParticulas();
     Lista<Particula*>::Iterador p = particulas.iteradorIni();
     
@@ -65,7 +70,6 @@ void VisualizadorParticulas::dibujarParticulas() {
     glutSwapBuffers();
 }
 
-/** Escribir un texto usando OpenGL */
 void VisualizadorParticulas::escribirTexto(GLfloat x, GLfloat y, const char *text)
 {
     const char *p;
@@ -113,7 +117,6 @@ void VisualizadorParticulas::calcularFPS()
     }
 }
 
-/** Actualizar visor opengl al redimensionar ventana */
 void VisualizadorParticulas::redimensionarVentana(int width, int height) {
     instancia->width = width;
     instancia->height = height;
@@ -133,13 +136,11 @@ void VisualizadorParticulas::redimensionarVentana(int width, int height) {
     glutPostRedisplay();
 }
 
-/** Procesar eventos de ratón */
 void VisualizadorParticulas::procesarRaton(int button, int state, int x, int y) {
     tbMouse(button, state, x, y);
     glutPostRedisplay();
 }
 
-/** Procesar movimiento de ratón */
 void VisualizadorParticulas::procesarMovimientoRaton(int x, int y) {
     tbMotion(x, y);
     glutPostRedisplay();
@@ -148,6 +149,10 @@ void VisualizadorParticulas::procesarMovimientoRaton(int x, int y) {
 void VisualizadorParticulas::procesarTeclado(unsigned char key, int x, int y)
 {
     switch (key) {
+        case 'W': case 'w': instancia->rotate_x += 3; break;
+        case 'A': case 'a': instancia->rotate_y -= 3; break;
+        case 'S': case 's': instancia->rotate_x -= 3; break;
+        case 'D': case 'd': instancia->rotate_y += 3; break;
         case 27:
         case 'Q':
         case 'q':
@@ -158,15 +163,12 @@ void VisualizadorParticulas::procesarTeclado(unsigned char key, int x, int y)
     }
 }
 
-/** Bucle principal de actualización y repintado */
 void VisualizadorParticulas::espera() {
     instancia->actualizarParticulas();
     instancia->calcularFPS();
     glutPostRedisplay();
 }
 
-
-/** Iniciar openGL y configurar GLUT */
 void VisualizadorParticulas::iniciarGL() {
     glEnable(GL_POINT_SMOOTH);
     glEnable(GL_BLEND);
@@ -186,18 +188,15 @@ void VisualizadorParticulas::iniciarGL() {
     glutIdleFunc(VisualizadorParticulas::espera);
 }
 
-/** Arrancar bucle de simulación */
 void VisualizadorParticulas::ejecutar() {
     glutMainLoop();
 }
 
-/** Liberar memoria */
 void VisualizadorParticulas::finalizar() {
     delete VisualizadorParticulas::instancia;
     VisualizadorParticulas::instancia = 0;
 }
 
-/** Obtener instancia del simulador de partículas */
 VisualizadorParticulas* VisualizadorParticulas::leerInstancia() {
     if (instancia == 0) {
         instancia = new VisualizadorParticulas();

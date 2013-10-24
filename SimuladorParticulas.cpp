@@ -1,5 +1,6 @@
 /* 
  * @file   SimuladorParticulas.cpp
+ * @title  Reproduce el comportamiento de las partículas dentro de un espacio cúbico
  * @author Antonio Jesús Rueda Ruiz
  * @author José Ángel Pastrana Padilla
  */
@@ -27,7 +28,6 @@ SimuladorParticulas::SimuladorParticulas(int numParticulas) : particulas(),espac
 
 SimuladorParticulas::~SimuladorParticulas() {
 }
-
 
 void SimuladorParticulas::actualizar() {
     srand(time(NULL)); /* Semilla. */

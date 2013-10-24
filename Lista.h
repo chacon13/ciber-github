@@ -1,6 +1,8 @@
 /* 
+ * @file   Lista.h
+ * @title  Implementación de lista doblemente enlazada como estructura de datos para C++
  * @author José Ángel Pastrana Padilla
- * @email japp0005@red.ujaen.es
+ * @email  japp0005@red.ujaen.es
  */
 
 #ifndef LISTA_H
@@ -103,6 +105,7 @@ public:
 
 /**
  * @brief Consulta, acceso y modificación a los datos de una lista. Iterador.
+ * @throw Emplea la excepción IteradorInvalido en sus métodos.
  */
 template<typename T>
 class Lista<T>::Iterador {

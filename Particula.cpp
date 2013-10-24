@@ -1,6 +1,8 @@
 /* 
+ * @file   Particula.cpp
+ * @title  Abstracción de una partícula
  * @author José Ángel Pastrana Padilla
- * @email japp0005@red.ujaen.es
+ * @email  japp0005@red.ujaen.es
  */
 
 #include "Particula.h"

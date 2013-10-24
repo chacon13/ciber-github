@@ -1,6 +1,8 @@
 /* 
+ * @file   Matriz3D.h
+ * @title  Representación de un espacio cúbico empleando tres ejes
  * @author José Ángel Pastrana Padilla
- * @email japp0005@red.ujaen.es
+ * @email  japp0005@red.ujaen.es
  */
 
 #ifndef MATRIZ3D_H
@@ -9,7 +11,8 @@
 #include "FueraRango.h"
 
 /**
- * @brief Representación de una matriz tridimensional.
+ * @brief Espacio cúbico de un determinado tamaño.
+ * @throw Emplea la excepción FueraRango en sus métodos.
  */
 template<typename T, const unsigned int N>
 class Matriz3D {

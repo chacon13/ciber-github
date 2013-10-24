@@ -1,6 +1,8 @@
 /* 
+ * @file   Particula.h
+ * @title  Abstracción de una partícula
  * @author José Ángel Pastrana Padilla
- * @email japp0005@red.ujaen.es
+ * @email  japp0005@red.ujaen.es
  */
 
 #ifndef PARTICULA_H
@@ -11,11 +13,10 @@
  */
 class Particula {
 private:
-    unsigned int x, y, z, /**< Posición dentro de la matriz. **/
-                 masa;    /**< Masa de la partícula. **/
+    unsigned int x, y, z, /**< Posición dentro de la matriz. */
+                 masa;    /**< Masa de la partícula. */
     
 public:
-    
     /**
      * @brief Constructor por defecto.
      * @param _x Posición de la partícula respecto al eje x.

@@ -1,6 +1,8 @@
 /* 
+ * @file   config.h
+ * @title  Configuración del comportamiento de la aplicación mediante macros de precompilador
  * @author José Ángel Pastrana Padilla
- * @email japp0005@red.ujaen.es
+ * @email  japp0005@red.ujaen.es
  */
 
 #ifndef CONFIG_H
@@ -17,13 +19,13 @@
 #define tE 100
 
 /** Cantidad de partículas. */
-#define tP 2
+#define tP 1000
 
 /** Realiza la simulación teniendo en cuenta que las partículas se desintegran en función de su masa. */
 #define DESINTEGRAR false
 
 /** Limpia el visualizador acabando con todas las partículas al finalizar la simulación. */
-#define LIMPIARVISTA true
+#define LIMPIARVISTA false
 
 #endif	/* CONFIG_H */
 

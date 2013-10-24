@@ -1,6 +1,8 @@
 /* 
+ * @file   Util.h
+ * @title  Repositorio de funciones empleadas por las diferentes partes de la aplicación
  * @author José Ángel Pastrana Padilla
- * @email japp0005@red.ujaen.es
+ * @email  japp0005@red.ujaen.es
  */
 
 #ifndef UTIL_H
@@ -21,6 +23,77 @@ inline bool desintegrarParticula(const unsigned int m) {
         return (ra<=px) ? true : false;
     }
 }
+
+/** Construcción de las aristas de un cubo usando GLUT. */
+#define GL_ARISTACUBO \
+    glColor4f(0.0f,1.0f,0.0f,0.6f); \
+    glBegin(GL_LINES); \
+        glVertex3i(0,0,0); \
+        glVertex3i(10,0,0); \
+        glVertex3i(0,0,0); \
+        glVertex3i(0,10,0); \
+        glVertex3i(0,0,0); \
+        glVertex3i(0,0,10); \
+        \
+        glVertex3i(10,0,10); \
+        glVertex3i(0,0,10); \
+        glVertex3i(10,0,10); \
+        glVertex3i(10,10,10); \
+        glVertex3i(10,0,10); \
+        glVertex3i(10,0,0); \
+        \
+        glVertex3i(0,10,10); \
+        glVertex3i(0,10,0); \
+        glVertex3i(0,10,10); \
+        glVertex3i(10,10,10); \
+        glVertex3i(0,10,10); \
+        glVertex3i(0,0,10); \
+        \
+        glVertex3i(10,10,0); \
+        glVertex3i(0,10,0); \
+        glVertex3i(10,10,0); \
+        glVertex3i(10,10,10); \
+        glVertex3i(10,10,0); \
+        glVertex3i(10,0,0); \
+    glEnd();
+
+/** Construcción de las paredes de un cubo usando GLUT. */
+#define GL_PAREDCUBO \
+    glColor4f(0.0f,0.0f,1.0f,0.05f); \
+    glBegin(GL_POLYGON); \
+        glVertex3i(0,0,0); \
+        glVertex3i(0,10,0); \
+        glVertex3i(0,10,10); \
+        glVertex3i(0,0,10); \
+        \
+        glVertex3i(0,0,0); \
+        glVertex3i(10,0,0); \
+        glVertex3i(10,0,10); \
+        glVertex3i(0,0,10); \
+        \
+        glVertex3i(0,0,0); \
+        glVertex3i(0,10,0); \
+        glVertex3i(10,10,0); \
+        glVertex3i(10,0,0); \
+        \
+    glEnd(); \
+    glBegin(GL_POLYGON); \
+        glVertex3i(10,10,10); \
+        glVertex3i(0,10,10); \
+        glVertex3i(0,0,10); \
+        glVertex3i(10,0,10); \
+        \
+        glVertex3i(10,10,10); \
+        glVertex3i(0,10,10); \
+        glVertex3i(0,10,0); \
+        glVertex3i(10,10,0); \
+        \
+        glVertex3i(10,10,10); \
+        glVertex3i(10,10,0); \
+        glVertex3i(10,0,0); \
+        glVertex3i(10,0,10); \
+        \
+    glEnd();
 
 #endif	/* UTIL_H */
 
