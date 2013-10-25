@@ -68,6 +68,8 @@ void VisualizadorParticulas::dibujarParticulas() {
     }
 
     glutSwapBuffers();
+    
+    espera(); // Remember: Esto no es competencia de DisplayFunc, en sus tiempos lo administraba Idle. :P
 }
 
 void VisualizadorParticulas::escribirTexto(GLfloat x, GLfloat y, const char *text)
@@ -184,8 +186,7 @@ void VisualizadorParticulas::iniciarGL() {
     glutKeyboardFunc(VisualizadorParticulas::procesarTeclado);
     glutMouseFunc(VisualizadorParticulas::procesarRaton);
     glutMotionFunc(VisualizadorParticulas::procesarMovimientoRaton);
-
-    glutIdleFunc(VisualizadorParticulas::espera);
+    //glutIdleFunc(VisualizadorParticulas::espera); /**< DisplayFunc se encargará de todo ahora :D */
 }
 
 void VisualizadorParticulas::ejecutar() {
