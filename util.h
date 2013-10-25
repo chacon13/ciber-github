@@ -24,74 +24,80 @@ inline bool desintegrarParticula(const unsigned int m) {
     }
 }
 
-/** Construcción de las aristas de un cubo usando GLUT. */
+/**
+ * @brief Construcción de las aristas de un cubo usando GLUT.
+ * @pre Definición de la dimensión en una variable llamada GL_tE. Ejemplo: const float GL_tE=tE/10.0f;
+ */
 #define GL_ARISTACUBO \
     glColor4f(0.0f,1.0f,0.0f,0.6f); \
     glBegin(GL_LINES); \
-        glVertex3i(0,0,0); \
-        glVertex3i(10,0,0); \
-        glVertex3i(0,0,0); \
-        glVertex3i(0,10,0); \
-        glVertex3i(0,0,0); \
-        glVertex3i(0,0,10); \
+        glVertex3f(0,0,0); \
+        glVertex3f(GL_tE,0,0); \
+        glVertex3f(0,0,0); \
+        glVertex3f(0,GL_tE,0); \
+        glVertex3f(0,0,0); \
+        glVertex3f(0,0,GL_tE); \
         \
-        glVertex3i(10,0,10); \
-        glVertex3i(0,0,10); \
-        glVertex3i(10,0,10); \
-        glVertex3i(10,10,10); \
-        glVertex3i(10,0,10); \
-        glVertex3i(10,0,0); \
+        glVertex3f(GL_tE,0,GL_tE); \
+        glVertex3f(0,0,GL_tE); \
+        glVertex3f(GL_tE,0,GL_tE); \
+        glVertex3f(GL_tE,GL_tE,GL_tE); \
+        glVertex3f(GL_tE,0,GL_tE); \
+        glVertex3f(GL_tE,0,0); \
         \
-        glVertex3i(0,10,10); \
-        glVertex3i(0,10,0); \
-        glVertex3i(0,10,10); \
-        glVertex3i(10,10,10); \
-        glVertex3i(0,10,10); \
-        glVertex3i(0,0,10); \
+        glVertex3f(0,GL_tE,GL_tE); \
+        glVertex3f(0,GL_tE,0); \
+        glVertex3f(0,GL_tE,GL_tE); \
+        glVertex3f(GL_tE,GL_tE,GL_tE); \
+        glVertex3f(0,GL_tE,GL_tE); \
+        glVertex3f(0,0,GL_tE); \
         \
-        glVertex3i(10,10,0); \
-        glVertex3i(0,10,0); \
-        glVertex3i(10,10,0); \
-        glVertex3i(10,10,10); \
-        glVertex3i(10,10,0); \
-        glVertex3i(10,0,0); \
+        glVertex3f(GL_tE,GL_tE,0); \
+        glVertex3f(0,GL_tE,0); \
+        glVertex3f(GL_tE,GL_tE,0); \
+        glVertex3f(GL_tE,GL_tE,GL_tE); \
+        glVertex3f(GL_tE,GL_tE,0); \
+        glVertex3f(GL_tE,0,0); \
     glEnd();
 
-/** Construcción de las paredes de un cubo usando GLUT. */
+/**
+ * @brief Construcción de las paredes de un cubo usando GLUT.
+ * @pre Definición de la dimensión en una variable llamada GL_tE. Ejemplo: const float GL_tE=tE/10.0f;
+ */
 #define GL_PAREDCUBO \
     glColor4f(0.0f,0.0f,1.0f,0.05f); \
     glBegin(GL_POLYGON); \
-        glVertex3i(0,0,0); \
-        glVertex3i(0,10,0); \
-        glVertex3i(0,10,10); \
-        glVertex3i(0,0,10); \
+        glVertex3f(0,0,0); \
+        glVertex3f(0,GL_tE,0); \
+        glVertex3f(0,GL_tE,GL_tE); \
+        glVertex3f(0,0,GL_tE); \
         \
-        glVertex3i(0,0,0); \
-        glVertex3i(10,0,0); \
-        glVertex3i(10,0,10); \
-        glVertex3i(0,0,10); \
+        glVertex3f(0,0,0); \
+        glVertex3f(GL_tE,0,0); \
+        glVertex3f(GL_tE,0,GL_tE); \
+        glVertex3f(0,0,GL_tE); \
         \
-        glVertex3i(0,0,0); \
-        glVertex3i(0,10,0); \
-        glVertex3i(10,10,0); \
-        glVertex3i(10,0,0); \
+        glVertex3f(0,0,0); \
+        glVertex3f(0,GL_tE,0); \
+        glVertex3f(GL_tE,GL_tE,0); \
+        glVertex3f(GL_tE,0,0); \
         \
     glEnd(); \
     glBegin(GL_POLYGON); \
-        glVertex3i(10,10,10); \
-        glVertex3i(0,10,10); \
-        glVertex3i(0,0,10); \
-        glVertex3i(10,0,10); \
+        glVertex3f(GL_tE,GL_tE,GL_tE); \
+        glVertex3f(0,GL_tE,GL_tE); \
+        glVertex3f(0,0,GL_tE); \
+        glVertex3f(GL_tE,0,GL_tE); \
         \
-        glVertex3i(10,10,10); \
-        glVertex3i(0,10,10); \
-        glVertex3i(0,10,0); \
-        glVertex3i(10,10,0); \
+        glVertex3f(GL_tE,GL_tE,GL_tE); \
+        glVertex3f(0,GL_tE,GL_tE); \
+        glVertex3f(0,GL_tE,0); \
+        glVertex3i(GL_tE,GL_tE,0); \
         \
-        glVertex3i(10,10,10); \
-        glVertex3i(10,10,0); \
-        glVertex3i(10,0,0); \
-        glVertex3i(10,0,10); \
+        glVertex3f(GL_tE,GL_tE,GL_tE); \
+        glVertex3f(GL_tE,GL_tE,0); \
+        glVertex3f(GL_tE,0,0); \
+        glVertex3f(GL_tE,0,GL_tE); \
         \
     glEnd();
 

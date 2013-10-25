@@ -42,7 +42,8 @@ void VisualizadorParticulas::dibujarParticulas() {
     glRotatef( instancia->rotate_x, 1.0, 0.0, 0.0 );
     glRotatef( instancia->rotate_y, 0.0, 1.0, 0.0 );
     glTranslatef(-5.0f, -5.0f, -5.0f);
-
+    
+    const float GL_tE=tE/10.0f; /* Cálculo de las dimensiones a la hora de pintar el cubo. */
     GL_ARISTACUBO
     GL_PAREDCUBO
     
