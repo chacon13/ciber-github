@@ -27,6 +27,11 @@ SimuladorParticulas::SimuladorParticulas(int numParticulas) : particulas(),espac
 }
 
 SimuladorParticulas::~SimuladorParticulas() {
+    Lista<Particula*>::Iterador i=particulas.iteradorIni();
+    while(!i.fin()) {
+        delete i.dato();
+        i.siguiente();
+    }
 }
 
 void SimuladorParticulas::actualizar() {
@@ -96,10 +101,6 @@ void SimuladorParticulas::imprimirEstadisticas() {
     Lista<Particula*>::Iterador itP=particulas.iteradorIni();
     while (!itP.fin()) {
         eResultado[itP.dato()->getMasa()-1]++;
-        delete itP.dato();
-        if (LIMPIARVISTA) {
-                particulas.borrarIni();
-        }
         itP.siguiente();
     }
     
