@@ -16,7 +16,7 @@
 #define NUM_PASOS_SIMULACION 1000
 
 /** Tamaño físico para el espacio. */
-#define tE 100
+#define tE 200
 
 /** Cantidad de partículas. */
 #define tP 1000
