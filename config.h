@@ -24,8 +24,5 @@
 /** Realiza la simulación teniendo en cuenta que las partículas se desintegran en función de su masa. */
 #define DESINTEGRAR false
 
-/** Limpia el visualizador acabando con todas las partículas al finalizar la simulación. */
-#define LIMPIARVISTA false
-
 #endif	/* CONFIG_H */
 
