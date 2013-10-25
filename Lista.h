@@ -145,7 +145,7 @@ public:
 };
 
 template<typename T>
-Lista<T>::Lista(const Lista& orig):cabecera(0),cola(0) {
+Lista<T>::Lista(const Lista& orig):cabecera(0),cola(0),nL(0) {
     operator=(orig);
 }
 
