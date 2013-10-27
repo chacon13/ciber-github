@@ -11,6 +11,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
+#include <ctime>
 #include "Particula.h"
 #include "Lista.h"
 #include "Matriz3D.h"
