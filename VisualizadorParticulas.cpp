@@ -43,10 +43,13 @@ void VisualizadorParticulas::dibujarParticulas() {
     const float GL_xyz=GL_tE/-2.0f; /*< Cálculo del centro del eje del cubo */
     glRotatef( instancia->rotate_x, 1.0, 0.0, 0.0 );
     glRotatef( instancia->rotate_y, 0.0, 1.0, 0.0 );
-    glTranslatef(GL_xyz,GL_xyz,GL_xyz); //glTranslatef(-5.0f, -5.0f, -5.0f);
     
-    GL_ARISTACUBO
-    GL_PAREDCUBO
+    glColor4f(0.0f,1.0f,0.0f,0.6f);
+    glutWireCube(GL_tE);
+    glColor4f(0.0f,0.0f,1.0f,0.05f);
+    glutSolidCube(GL_tE);
+    
+    glTranslatef(GL_xyz,GL_xyz,GL_xyz); //glTranslatef(-5.0f, -5.0f, -5.0f);
     
     glColor4f(1.0f, 1.0f, 1.0f, 0.9f); //glColor4f(1.0f, 0.0f, 0.0f, 0.3f);
     Lista<Particula*>& particulas = instancia->simuladorParticulas.listaParticulas();
