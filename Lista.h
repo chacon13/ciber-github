@@ -35,7 +35,7 @@ public:
      */
     Lista& operator=(const Lista& orig);
     
-    const unsigned int& tam() const; /**< Cantidad de elementos en la lista */
+    const unsigned int& tam() const; /**< Cantidad de elementos en la lista. */
     
     /**
      * @brief Insertar un elemento en la lista empleando un iterador.
@@ -119,14 +119,14 @@ public:
     virtual ~Iterador() {}; /**< Destructor de Iterador. */
     
     /**
-     * @brief Mover el iterador al siguiente elemento de la lista.
+     * @brief Mover el iterador al anterior elemento de la lista.
      * @post Modifica miembro actual.
      * @throw Excepción IteradorInvalido, si este iterador no puede completar la operación.
      */
     void anterior() throw (IteradorInvalido) { if (actual) { actual=actual->anterior; } else { throw IteradorInvalido(); } };
     
     /**
-     * @brief Mover el iterador al anterior elemento de la lista.
+     * @brief Mover el iterador al siguiente elemento de la lista.
      * @post Modifica miembro actual.
      * @throw Excepción IteradorInvalido, si este iterador no puede completar la operación.
      */
