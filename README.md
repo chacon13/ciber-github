@@ -16,7 +16,7 @@
 0. ~~Prepara el compilador MinGW de 32 bits con MSYS.~~
 1. Descarga esto: [GLUT para MinGW32](https://git.ujacraft.es/files/note/4/GLUT-MinGW-3.7.6-6.mp.zip)
 2. Copia /GLUT/include/glut.h del zip en C:\MinGW\include\GL
-3. Copia /GLUT/include/libglut32.a del zip en C:\MinGW\lib
+3. Copia /GLUT/lib/libglut32.a del zip en C:\MinGW\lib
 4. Copia /GLUT/glut32.dll del zip en SYSTEM32/SYSWOW64 dependiendo de la versión de Windows.
 5. Al abrir el projecto en Netbeans, debes resolver los conflictos por el cambio de plataforma (*Resolve problems...* en la ventana emergente que aparece).
 5. Configuración de GLUT en Netbeans:
